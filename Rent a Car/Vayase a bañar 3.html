@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>te quiero</title>
+  <style>
+    /* RESET Y BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #2c2c3e);
+      color: #fff;
+      scroll-behavior: smooth;
+      transition: background 0.3s ease;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(30, 30, 47, 0.8);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 10;
+      border-bottom: 1px solid #444;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6') center/cover no-repeat;
+      animation: zoomIn 20s infinite alternate;
+    }
+
+    @keyframes zoomIn {
+      0% { background-size: 100%; }
+      100% { background-size: 120%; }
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      text-shadow: 0 0 10px #000;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #4a00e0; }
+      to { text-shadow: 0 0 30px #8e2de2; }
+    }
+
+    /* SECCIÓN */
+    .section {
+      padding: 5rem 2rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #2f2f47;
+      padding: 2rem;
+      border-radius: 15px;
+      transition: transform 0.3s, background 0.3s;
+      cursor: pointer;
+      box-shadow: 0 0 10px #0005;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      background: #3f3f5f;
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      color: #e0e0ff;
+    }
+
+    .card p {
+      color: #ccc;
+    }
+
+    /* BOTÓN ANIMADO */
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      transition: left 0.4s;
+    }
+
+    .btn:hover::after {
+      left: 100%;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 2rem;
+      text-align: center;
+      background: #1e1e2f;
+      color: #888;
+    }
+
+    /* MODO OSCURO AUTOMÁTICO */
+    @media (prefers-color-scheme: light) {
+      body {
+        background: #f2f2f2;
+        color: #222;
+      }
+
+      header, footer {
+        background: #fff;
+        color: #000;
+      }
+
+      .card {
+        background: #eee;
+        color: #222;
+      }
+
+      .card:hover {
+        background: #ddd;
+      }
+
+      .btn {
+        background: linear-gradient(to right, #4a00e0, #8e2de2);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Denis</h1>
+    <nav>
+      <a href="#inicio">bañese</a>
+      <a href="#info">bañese</a>
+      <a href="#contacto">cochina</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div>
+      <h2>Bañarse es una vaina bacana</h2>
+      <a href="#info" class="btn">en verdad</a>
+    </div>
+  </section>
+
+  <section class="section" id="info">
+    <h2 style="text-align:center; margin-bottom:2rem;">beneficios</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>comodidad</h3>
+        <p>te duermes mas rapido y te sientes la piel mas suave</p>
+      </div>
+      <div class="card">
+        <h3>higiene</h3>
+        <p>mata bacterias y enfermedades</p>
+      </div>
+      <div class="card">
+        <h3>te lo dice el ale</h3>
+        <p>yo tengo la razon</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contacto">
+    <h2 style="text-align:center; margin-bottom:2rem;">cualquier cosa</h2>
+    <p style="text-align:center;">
+      ¿Tienes dudas? <a href="#" class="btn">manda foto</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>para denis Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
